@@ -1,0 +1,507 @@
+/***************************************************************************************************
+* Template Blank
+* SITE CSS
+* Created at 2018
+* By nks.trampnn@gmail.com
+***************************************************************************************************/
+@font-face {
+  font-family: 'hpbdFont';
+  src: url(../font/chinesefontdesign.com_2017-02-20_08-43-14/Valentine%27s%20day%20exclusive%20Typeface%20Chinese%20Font%20-Simplified%20Chinese%20Fonts.ttf);
+}
+
+@font-face {
+  font-family: 'letterFont';
+  src: url(../font/chinesefontdesign.com-2017-12-15_07-40-21_788452/Good%20Night%20Retro%20Chinese%20Font-Simplified%20Chinese.ttf);
+}
+
+@import '../lib/bootstrap-4.1.3/scss/functions';
+@import '../lib/bootstrap-4.1.3/scss/variables';
+@import '../lib/bootstrap-4.1.3/scss/mixins';
+@import 'variables';
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  background: $white;
+  font-size: $font-size-base;
+}
+
+a {
+  color: $black;
+  transition: .3s;
+
+	&:hover, &:focus, &:active, &.active {
+	  color: $gray-600;
+	  text-decoration: none;
+	}
+} 
+
+*:focus {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+/* page-loader */
+
+.page-loader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  animation: Gradient 15s ease infinite;
+  position: fixed;
+  z-index: 9;
+
+  & > .unit {
+    text-align: center;
+  }
+
+  .heart {
+    position: relative;
+    width: $line_width * 9 + $line_space * 8;
+
+    & > [class*="heart-piece-"] {
+      position: absolute;
+      top: -$line_width *.5;
+      width: $line_width;
+      height: $line_width;
+      border-radius: $line_width * .5;
+      background-color: $white;
+    }
+
+    .heart-piece-4 {
+      -webkit-animation: piece-4 3.2s infinite;
+      animation: piece-4 3.2s infinite;
+    }
+
+    .heart-piece-3,
+    .heart-piece-5 {
+      -webkit-animation: piece-3 3.2s infinite;
+      animation: piece-3 3.2s infinite;
+    }
+
+    .heart-piece-2,
+    .heart-piece-6 {
+      -webkit-animation: piece-2 3.2s infinite;
+      animation: piece-2 3.2s infinite;
+    }
+
+    .heart-piece-1,
+    .heart-piece-7 {
+      -webkit-animation: piece-1 3.2s infinite;
+      animation: piece-1 3.2s infinite;
+    }
+
+    .heart-piece-0,
+    .heart-piece-8 {
+      -webkit-animation: piece-0 3.2s infinite;
+      animation: piece-0 3.2s infinite;
+    }
+
+    .heart-piece-0 {
+      left: 0;
+      -webkit-animation-delay: 0s;
+      animation-delay: 0s;
+    }
+
+    .heart-piece-1 {
+      left: ($line_width + $line_space) * 1;
+      -webkit-animation-delay: 0.15s * 1;
+      animation-delay: 0.15s * 1;
+    }
+
+    .heart-piece-2 {
+      left: ($line_width + $line_space) * 2;
+      -webkit-animation-delay: 0.15s * 2;
+      animation-delay: 0.15s * 2;
+    }
+
+    .heart-piece-3 {
+      left: ($line_width + $line_space) * 3;
+      -webkit-animation-delay: 0.15s * 3;
+      animation-delay: 0.15s * 3;
+    }
+
+    .heart-piece-4 {
+      left: ($line_width + $line_space) * 4;
+      -webkit-animation-delay: 0.15s * 4;
+      animation-delay: 0.15s * 4;
+    }
+
+    .heart-piece-5 {
+      left: ($line_width + $line_space) * 5;
+      -webkit-animation-delay: 0.15s * 5;
+      animation-delay: 0.15s * 5;
+    }
+
+    .heart-piece-6 {
+      left: ($line_width + $line_space) * 6;
+      -webkit-animation-delay: 0.15s * 6;
+      animation-delay: 0.15s * 6;
+    }
+
+    .heart-piece-7 {
+      left: ($line_width + $line_space) * 7;
+      -webkit-animation-delay: 0.15s * 7;
+      animation-delay: 0.15s * 7;
+    }
+
+    .heart-piece-8 {
+      left: ($line_width + $line_space) * 8;
+      -webkit-animation-delay: 0.15s * 8;
+      animation-delay: 0.15s * 8;
+    }
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes piece-4 {
+  0%, 10%, 90%, 100% {
+    height: $line_width;
+    top: -$line_width * .5;
+  }
+  45%, 55% {
+    height: $line_width * 9.4;
+    top: -$line_width * 2.3;
+  }
+}
+
+@keyframes piece-3 {
+  0%, 10%, 90%, 100% {
+    height: $line_width;
+    top: -$line_width * .5;
+  }
+  45%, 55% {
+    height: $line_width * 9;
+    top: -$line_width * 3.1;
+  }
+}
+
+@keyframes piece-2 {
+  0%, 10%, 90%, 100% {
+    height: $line_width;
+    top: -$line_width * .5;
+  }
+  45%, 55% {
+    height: $line_width * 8;
+    top: -$line_width * 3.7;
+  }
+}
+
+@keyframes piece-1 {
+  0%, 10%, 90%, 100% {
+    height: $line_width;
+    top: -$line_width * .5;
+  }
+  45%, 55% {
+    height: $line_width * 6;
+    top: -$line_width * 3.1;
+  }
+}
+
+@keyframes piece-0 {
+  0%, 10%, 90%, 100% {
+    height: $line_width;
+    top: -$line_width * .5;
+  }
+  45%, 55% {
+    height: $line_width * 3;
+    top: -$line_width * 1.5;
+  }
+}
+
+/* section */
+
+.section {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  & > .container,
+  & > .container > .row {
+    height: 100%;
+  }
+}
+
+/* section-intro */
+
+.section-intro {
+  background-color: #ffeeee;
+
+  & > figure.balloons,
+  & > figure.light {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  & > figure.light {
+    & > img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  & > figure.balloons {
+    & > img {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  p.hpbd-text {
+    width: 100%;
+    animation-name: fadeIn, tada, fadeOut;
+    animation-fill-mode: forwards;
+    animation-duration: 500ms, 2s, 500ms;
+    animation-delay: 17s, 18s, 22s;
+    font: bold 48px 'hpbdFont';
+    text-align: center;
+    text-shadow: 2px 2px 0px #ffffff, 5px 5px 0px rgba(255, 0, 0, 0.1);
+    color: #f45776;
+    opacity: 0;
+    position: absolute;
+  }
+
+  .promo-gift-wrapper {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    animation-name: fadeIn, shake;
+    animation-fill-mode: forwards;
+    animation-duration: 500ms, 1s;
+    animation-delay: 22.5s, 23s;
+    opacity: 0;
+    cursor: pointer;
+
+    .promo-gift {
+      width: 192px;
+      height: 128px;
+      position: relative;
+
+      @include promo-gift-animation(promo-gift-wiggle);
+
+      img,
+      div {
+        position: absolute;
+      }
+
+      img {
+        transform: scale(2);
+        transform-origin: 0 0;
+      }
+      
+
+      &-top {
+        width: 192px;
+        bottom: 120px;
+        left: -4px;
+
+        @include promo-gift-animation(promo-gift-top-wiggle);
+      }
+
+      &-lid {
+        bottom: 0;
+        left: 0;
+      }
+
+      &-ribbon {
+        bottom: 12px;
+        left: 96px;
+        transform-origin: 50% 100% !important;
+        transition: all 0.25s ease;
+
+        &.ribbon-1 {
+          @include promo-gift-animation(promo-gift-ribbon-1-wiggle, $promo-gift-animation-duration/2);
+        }
+
+        &.ribbon-2 {
+          @include promo-gift-animation(promo-gift-ribbon-2-wiggle, $promo-gift-animation-duration/2);
+        }
+      }
+    }
+  }
+    
+  @keyframes promo-gift-top-wiggle {
+    0% { transform: rotate(0deg); transform-origin: 100% 100%; }
+    10% { transform: rotate(5deg); }
+    14% { transform-origin: 100% 100%; transform: rotate(0deg); }
+    50% { transform-origin: 0% 100%; transform: rotate(0deg); }
+    60% { transform: rotate(-5deg); }
+    64% { transform-origin: 0% 100%; transform: rotate(0deg); }
+    100% { transform-origin: 100% 100%; transform: rotate(0deg); }
+  }
+
+  @keyframes promo-gift-wiggle {
+    0% { transform: rotate(0deg) scaleX(1); transform-origin: 100% 100%; }
+    8% { transform: rotate(2deg) scaleX(0.99); }
+    12% { transform: rotate(0deg) scaleX(1); }
+    16% { transform: rotate(1deg) scaleX(1); }
+    20% { transform: rotate(0deg) scaleX(1); transform-origin: 100% 100%; }
+    50% { transform: rotate(0deg) scaleX(1); transform-origin: 0% 100%;}
+    58% { transform: rotate(-2deg) scaleX(0.99); }
+    62% { transform: rotate(0deg) scaleX(1); }
+    66% { transform: rotate(-1deg) scaleX(1); }
+    70% { transform: rotate(0deg) scaleX(1); transform-origin: 0% 100%; }
+    100% { transform: rotate(0deg) scaleX(1); transform-origin: 100% 100%;  }
+  }
+
+  @keyframes promo-gift-ribbon-1-wiggle {
+    0%   { transform: rotate(45deg); }
+    6%   { transform: rotate(40deg); }
+    22%  { transform: rotate(65deg); }
+    38%  { transform: rotate(30deg); }
+    44%  { transform: rotate(45deg); }
+    100% { transform: rotate(45deg); }
+  }
+
+  @keyframes promo-gift-ribbon-2-wiggle {
+    0%   { transform: rotate(-45deg); }
+    6%   { transform: rotate(-40deg); }
+    22%  { transform: rotate(-65deg); }
+    38%  { transform: rotate(-30deg); }
+    44%  { transform: rotate(-45deg); }
+    100% { transform: rotate(-45deg); }
+  }
+
+  @keyframes promo-gift-floating {
+    0% { transform: rotate(-1deg); transform-origin: 50% 100%; }
+    50% { transform: rotate(1deg); transform-origin: 50% 100%; }
+    100% { transform: rotate(-1deg); transform-origin: 50% 100%; }
+  }
+
+  @keyframes promo-gift-top-floating {
+    0% { transform: rotate(-3deg) translateY(-10px); transform-origin: 50% 100%; }
+    50% { transform: rotate(3deg) translateY(-10px);  transform-origin: 50% 100%; }
+    100% { transform: rotate(-3deg) translateY(-10px); transform-origin: 50% 100%; }
+  }
+
+  @keyframes promo-gift-mini-rotate {
+    100% { background-position: -504px; }
+  }
+}
+
+bokeh {
+  position: absolute;
+  width: 2vmin;
+  height: 2vmin;
+  border-radius: 50%;
+  animation-name: explosion;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+  animation-timing-function: cubic-bezier(0.84, 0.02, 1, 1);
+
+  @for $i from 1 through 100 {
+    &:nth-child(#{$i}) {
+      $color: ceil(random() * 4);
+      background-color: nth($colors, $color);
+      $x: random() * 100vw;
+      $y: random() * 100vh;
+      transform: translate($x, $y);
+      animation-duration: random() * 3s + 2s;
+      animation-delay: random() * -5s;
+    }
+  }
+}
+
+@keyframes explosion {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(50vw, 100vh);
+  }
+}
+
+/* section-letter */
+
+section[class*="section-letter-"] {
+  background: left top repeat;
+
+  article.box-letter {
+    width: 100%;
+    padding: 64px;
+    background-color: $white;
+    position: relative;
+    z-index: 0;
+
+    &:before {
+      content: '';
+      width: calc(100% + 48px);
+      height: calc(100% + 48px);
+      background-color: rgba($white, .6);
+      border: 16px solid $white;
+      box-shadow: -15px 0 15px -15px rgba($black, .6), 15px 0 15px -15px rgba($black, .6);
+      position: absolute;
+      left: -24px;
+      top: -24px;
+      z-index: -1;
+    }
+
+    p.text {
+      font-family: 'letterFont';
+      font-size: 24px;
+    }
+
+    .tag-form {
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      left: 0;
+      bottom: -36px;
+
+      & > span {
+        min-width: 160px;
+        height: 48px;
+        display: inline-block;
+        padding: 0 16px;
+        background-color: $black;
+        border-radius: 48px;
+        font-family: 'letterFont';
+        color: $white;
+        font-size: $font-size-small;
+        font-weight: bold;
+        letter-spacing: 2px;
+        line-height: 48px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
