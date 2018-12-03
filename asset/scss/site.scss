@@ -252,17 +252,39 @@ a {
     top: 0;
 
     & > span {
-      font: 160px/1 'hpbdFont';
-      letter-spacing: 32px;
+      font-family: 'hpbdFont';
+      line-height: 1;
+      font-size: 64px;
+      letter-spacing: 16px;
+
+      @include media-breakpoint-up(md) {
+        font-size: 80px;
+        letter-spacing: 32px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        font-size: 160px;
+      }
     }
   }
 
   p.hpbd-text-2 {
     width: 100%;
     margin-bottom: 0;
-    font: bold 80px/1.2 'hpbdFont';
+    font-family: 'hpbdFont';
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 1.3;
     text-align: center;
     letter-spacing: 16px;
+
+    @include media-breakpoint-up(md) {
+      font-size: 64px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 80px;
+    }
   }
 
   #stars {
@@ -332,53 +354,6 @@ a {
 /* section-letter */
 
 .section-letter {
-  background: left top repeat;
-
-  /*article.box-letter {
-    width: 100%;
-    padding: 64px;
-    background-color: $white;
-    position: relative;
-    z-index: 0;
-
-    &:before {
-      content: '';
-      width: calc(100% + 48px);
-      height: calc(100% + 48px);
-      background-color: rgba($white, .6);
-      border: 16px solid $white;
-      box-shadow: -15px 0 15px -15px rgba($black, .6), 15px 0 15px -15px rgba($black, .6);
-      position: absolute;
-      left: -24px;
-      top: -24px;
-      z-index: -1;
-    }
-
-    .tag-form {
-      width: 100%;
-      text-align: center;
-      position: absolute;
-      left: 0;
-      bottom: -36px;
-
-      & > span {
-        min-width: 160px;
-        height: 48px;
-        display: inline-block;
-        padding: 0 16px;
-        background-color: $black;
-        border-radius: 48px;
-        font-family: 'letterFont';
-        color: $white;
-        font-size: $font-size-small;
-        font-weight: bold;
-        letter-spacing: 2px;
-        line-height: 48px;
-        text-transform: uppercase;
-      }
-    }
-  }*/
-
   .carousel,
   .carousel-inner,
   .carousel-item,
@@ -393,8 +368,15 @@ a {
         margin: 0;
 
         & > [class^="col-"] {
-          height: 100%;
           padding: 0;
+
+          @include media-breakpoint-down(lg) {
+            height: 50%;
+          }
+
+          @include media-breakpoint-up(lg) {
+            height: 100%;
+          }
         }
       }
     }
@@ -443,9 +425,29 @@ a {
         }
 
         .content {
-          padding: 64px;
+          padding: 16px;
           text-align: justify;
+
+          @include media-breakpoint-up(sm) {
+            padding: 32px;
+          }
+
+          @include media-breakpoint-up(lg) {
+            padding: 64px;
+          }
         }
+      }
+    }
+
+    .row-letter {
+      width: 100%;
+      height: 50%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      @include media-breakpoint-up(lg) {
+        height: 100%;
       }
     }
 
