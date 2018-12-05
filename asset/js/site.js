@@ -34,6 +34,6 @@ $(document).ready(function(){
     var num = Math.floor(Math.random() * 42),
         img = $(this);
 
-    img.find('img').attr('src', 'asset/img/fanart/fanart' + num + '.jpg');
+    img.find('img').attr('src', 'asset/img/fanart/fanart' + num + '.JPG');
   });
 });
