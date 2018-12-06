@@ -446,7 +446,6 @@ a {
         left: unset;
         bottom: unset;
         z-index: 9;
-        font-family: 'letterFont';
         color: $black;
         font-size: 24px !important;
 
@@ -466,6 +465,7 @@ a {
           padding: 16px;
           overflow-y: auto;
           pointer-events: all;
+          font-family: 'letterFont';
           text-align: left;
 
           @include media-breakpoint-up(sm) {
