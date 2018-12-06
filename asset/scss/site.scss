@@ -32,7 +32,6 @@ html, body {
 
 body {
   background: $white;
-  font-size: $font-size-base;
 }
 
 a {
@@ -362,7 +361,7 @@ a {
 
 /* section-letter */
 
-.section-letter {  
+.section-letter {
   .carousel,
   .carousel-inner,
   .carousel-item,
@@ -454,7 +453,7 @@ a {
           height: 64px;
           color: $white;
           text-align: center;
-          font-family: bold $font-size-small 'letterFont';
+          font: $font-size-small 'letterFont';
           line-height: 64px;
           text-transform: uppercase;
           letter-spacing: 2px;
