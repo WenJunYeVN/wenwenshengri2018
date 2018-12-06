@@ -10,9 +10,11 @@ $(window).on('load', function() {
 
     setTimeout(function() {
       $('.giftbox').fadeIn().addClass('animated bounce infinite');
-      $.scrollify({
-        section : ".section",
-      });
+      if($(window).width() > 992) {
+        $.scrollify({
+          section : ".section"
+        });
+      }
     }, 3000);
   }, 3000);
 });
