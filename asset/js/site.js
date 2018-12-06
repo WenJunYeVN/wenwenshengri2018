@@ -29,7 +29,7 @@ $(document).ready(function(){
   });
 
   $('.section-letter .carousel .carousel-inner .fanart-img').each(function() {
-    var num = Math.floor(Math.random() * 42),
+    var num = Math.floor(Math.random() * 40),
         img = $(this);
 
     img.find('img').attr('src', 'asset/img/fanart/fanart' + num + ".JPG");
