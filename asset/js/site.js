@@ -11,7 +11,7 @@ $(window).on('load', function() {
     setTimeout(function() {
       $('.giftbox').fadeIn().addClass('animated bounce infinite');
 
-      if($(window).width() > 992) {
+      if($(window).width() >= 768) {
         $.scrollify({
           section : ".section"
         });
@@ -21,7 +21,7 @@ $(window).on('load', function() {
 });
 
 $(document).ready(function(){
-  if($(window).width() < 992) {
+  if($(window).width() < 767) {
     // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
     let vh = window.innerHeight * 0.01;
     // Then we set the value in the --vh custom property to the root of the document
